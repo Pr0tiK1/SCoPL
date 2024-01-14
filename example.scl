@@ -1,0 +1,31 @@
+# This is a very useful piece of software
+
+# This will teach you some of the main aspects of this language
+
+# first you need to print text, to do this write something like this
+PRINT("hello world")
+
+# you can also make variables and print them out
+VAR newvariable = 2
+VAR anothervariable = "hello"
+
+# lets print them out
+PRINT(newvariable)
+PRINT(anothervariable)
+
+#lets add some stuff to them for fun
+PRINT(newvariable + 4)
+
+PRINT(anothervariable + " world!")
+
+#trying out loops
+FOR i = 0 TO 5 THEN
+	PRINT("here it comes 5 times")
+END
+
+#try out some user input!
+VAR text = INPUT()
+
+#print it out
+
+PRINT(text + " - output hehe")

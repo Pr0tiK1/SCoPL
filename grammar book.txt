@@ -1,0 +1,78 @@
+ALL THE KEYWORDS IN THIS LANGUAGE
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+statements  : NEWLINE* statement (NEWLINE+ statement)* NEWLINE*
+
+statement		: KEYWORD:RETURN expr?
+						: KEYWORD:CONTINUE
+						: KEYWORD:BREAK
+						: expr
+stating
+
+expr        : KEYWORD:VAR IDENTIFIER EQ expr
+            : comp-expr ((KEYWORD:AND|KEYWORD:OR) comp-expr)*
+what expr represents here
+
+comp-expr   : NOT comp-expr
+            : arith-expr ((EE|LT|GT|LTE|GTE) arith-expr)*
+comp expressions
+
+arith-expr  :	term ((PLUS|MINUS) term)*
+arithmatic expressions
+
+term        : factor ((MUL|DIV) factor)*
+getting terms identifier
+
+factor      : (PLUS|MINUS) factor
+            : power
+factoring a number
+
+power       : call (POW factor)*
+power of number identifier
+
+call        : atom (LPAREN (expr (COMMA expr)*)? RPAREN)?
+call identifier
+
+atom        : INT|FLOAT|STRING|IDENTIFIER
+            : LPAREN expr RPAREN
+            : list-expr
+            : if-expr
+            : for-expr
+            : while-expr
+            : func-def
+all text identifiers
+
+list-expr   : LSQUARE (expr (COMMA expr)*)? RSQUARE
+list statement
+
+if-expr     : KEYWORD:IF expr KEYWORD:THEN
+              (statement if-expr-b|if-expr-c?)
+            | (NEWLINE statements KEYWORD:END|if-expr-b|if-expr-c)
+if statement
+
+if-expr-b   : KEYWORD:ELIF expr KEYWORD:THEN
+              (statement if-expr-b|if-expr-c?)
+            | (NEWLINE statements KEYWORD:END|if-expr-b|if-expr-c)
+else statement
+
+if-expr-c   : KEYWORD:ELSE
+              statement
+            | (NEWLINE statements KEYWORD:END)
+else if statement
+
+for-expr    : KEYWORD:FOR IDENTIFIER EQ expr KEYWORD:TO expr 
+              (KEYWORD:STEP expr)? KEYWORD:THEN
+              statement
+            | (NEWLINE statements KEYWORD:END)
+for identifier
+
+while-expr  : KEYWORD:WHILE expr KEYWORD:THEN
+              statement
+            | (NEWLINE statements KEYWORD:END)
+while identifier
+
+func-def    : KEYWORD:FUN IDENTIFIER?
+              LPAREN (IDENTIFIER (COMMA IDENTIFIER)*)? RPAREN
+              (ARROW expr)
+            | (NEWLINE statements KEYWORD:END)
+shows us functions

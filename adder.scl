@@ -1,0 +1,10 @@
+PRINT("WELCOME TO ADDER")
+
+PRINT("Enter first number: ")
+VAR x = INPUT_INT()
+
+PRINT("Enter second number: ")
+VAR y = INPUT_INT()
+
+PRINT("The result:")   
+PRINT(x + y)
