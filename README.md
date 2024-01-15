@@ -14,5 +14,5 @@
 - Custom file system
 - low end compatible
 
-##instructions to use:
+## instructions to use:
 First after you have these files in your computer find the shell.py file, here you can run file or lets say you want to make a whole program, well first make a file (i have example files like calculator.scl if you want to know what file system to use) and put your code, then you can go to shell and use the RUN([put ur file name here]). for example RUN("calculator.scl")
